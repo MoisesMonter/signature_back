@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'users',
     'signatures',
-    'ata_model',
-    'ai_tratament',
     'corsheaders',
 ]
 

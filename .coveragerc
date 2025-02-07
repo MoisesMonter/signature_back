@@ -1,0 +1,12 @@
+[coverage:run]
+omit =
+    */migrations/*
+    */admin.py
+    */apps.py
+    */__init__.py
+    config/settings.py
+    config/urls.py
+    signatures/urls.py
+    users/urls.py
+    manage.py
+    signatures\admin.py    

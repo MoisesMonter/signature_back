@@ -33,9 +33,9 @@ config/__pycache__/
 # Specific to your project
 
 
-test_connection.py
-test_token.py
-login.js
+# test_connection.py
+# test_token.py
+# login.js
 
 
 # Editor settings
@@ -50,10 +50,10 @@ login.js
 Thumbs.db
 
 # Testing files
-test_*.py
-tests/
-coverage/
-.tox/
-.nox/
-*.cover
-.hypothesis/
+# test_*.py
+# tests/
+# coverage/
+# .tox/
+# .nox/
+# *.cover
+# .hypothesis/

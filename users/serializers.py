@@ -1,20 +1,3 @@
-# from rest_framework import serializers
-# from django.contrib.auth import get_user_model
-
-# User = get_user_model()
-
-# class LimitedUserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'first_name', 'email', 'photo_url']  # Apenas os campos permitidos para outros usuários
-
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'user_id', 'username', 'email', 'first_name', 'photo_url', 'is_active', 'my_signature']  
-
-
-
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 

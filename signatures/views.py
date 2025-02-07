@@ -146,6 +146,46 @@ class SignatureListViewSet(viewsets.ModelViewSet):
             return Response({"error": "Objeto não encontrado."}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({"error": "Erro interno do servidor."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    # @action(detail=True, methods=['patch'], url_path='update-state')
+    # def update_state(self, request, pk=None):
+    #     try:
+    #         # Obtém a lista de assinaturas garantindo que o usuário é o proprietário
+    #         signature_list = get_object_or_404(SignatureList, pk=pk, owner=request.user)
+
+    #         # Valida e atualiza os campos `is_active` e `is_completed`
+    #         is_active = request.data.get('is_active')
+    #         is_completed = request.data.get('is_completed')
+
+    #         if is_active is not None and isinstance(is_active, bool):
+    #             signature_list.is_active = is_active
+    #         if is_completed is not None and isinstance(is_completed, bool):
+    #             signature_list.is_completed = is_completed
+
+    #         # Salva as mudanças na lista de assinaturas
+    #         signature_list.save(update_fields=['is_active', 'is_completed'])
+
+    #         # Atualiza as flags das assinaturas associadas ignorando as restrições de is_active
+    #         for signature in signature_list.signatures.exclude(flag=3):
+    #             if not signature_list.is_active and signature_list.is_completed:
+    #                 signature.flag = 1  # Finalizado com sucesso
+    #             elif not signature_list.is_active and not signature_list.is_completed:
+    #                 signature.flag = 2  # Encerrado
+    #             elif signature_list.is_active and not signature_list.is_completed:
+    #                 signature.flag = 0  # Aberto
+    #             else:
+    #                 signature.flag = 0  # Valor padrão
+                
+    #             # Salva a assinatura permitindo operações em listas inativas
+    #             signature.save(allow_inactive_operations=True)
+
+    #         return Response({"message": "Estado atualizado e flags das assinaturas ajustadas com sucesso."}, status=status.HTTP_200_OK)
+
+    #     except ValidationError as ve:
+    #         return Response({"error": str(ve)}, status=status.HTTP_400_BAD_REQUEST)
+    #     except ObjectDoesNotExist:
+    #         return Response({"error": "Objeto não encontrado."}, status=status.HTTP_404_NOT_FOUND)
+    #     except Exception as e:
+    #         return Response({"error": "Erro interno do servidor."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     @extend_schema(
         operation_id="Check_Password",
