@@ -23,6 +23,8 @@ db.sqlite34
 *.sqlite3
 *.sqlite34
 *.sqlite
+!**/mutants/*.sqlite3
+!**/mutants/*.sqlite
 *.pyo
 *.pyd
 
