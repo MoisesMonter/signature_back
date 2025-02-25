@@ -1,9 +1,12 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from django.contrib.auth import get_user_model
+import os
+import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+django.setup()
 
 User = get_user_model()
-
 class LoginAPITest(APITestCase):
     def test_login_com_usuario_existente(self):
         User.objects.create(

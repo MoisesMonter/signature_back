@@ -3,9 +3,12 @@ from django.urls import reverse
 from django.contrib.auth import get_user_model
 from signatures.models import SignatureList, Signature
 from rest_framework.authtoken.models import Token
+import os
+import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+django.setup()
 
 User = get_user_model()
-
 class SignatureListViewSetTest(APITestCase):
     def setUp(self):
         self.user = User.objects.create(email="owner@test.com")

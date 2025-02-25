@@ -2,6 +2,10 @@ from django.urls import reverse
 from rest_framework.test import APITestCase, force_authenticate
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
+import os
+import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+django.setup()
 
 User = get_user_model()
 
