@@ -257,11 +257,11 @@ class SignatureListViewSet(viewsets.ModelViewSet):
             signatures = Signature.objects.filter(signature_list=signature_list).exclude(flag=3)
             base64_images = [signature.data for signature in signatures]
             if len(base64_images) < 1:
+
                 return Response(
                     {"error": "Você precisa ter ao menos uma assinatura."},
                     status=status.HTTP_200_OK
                 )
-
 
             images = [convert_base64_to_image(b64) for b64 in base64_images]*7
             
