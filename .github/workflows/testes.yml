@@ -25,8 +25,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          $env:DJANGO_SETTINGS_MODULE = 'config.settings'
           pip install pytest
-          
+
       - name: Rodar Testes
         run: |
           python manage.py test
