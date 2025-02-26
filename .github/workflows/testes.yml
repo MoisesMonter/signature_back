@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do Repositório
-        uses: actions/checkout@4
+        uses: actions/checkout@v3
       
       - name: Configurar Python
         uses: actions/setup-python@v5
