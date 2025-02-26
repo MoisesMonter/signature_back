@@ -1,8 +1,8 @@
 [cosmic-ray]
-module-path = "../(name).py"
+module-path = "../models.py"
 timeout = 10.0
 excluded-modules = []
-test-command = "python -m unittest ../tests/(name).py"
+test-command = "python -m unittest ../tests/models.py"
 
 [cosmic-ray.distributor]
 name = "local"
