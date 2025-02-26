@@ -1,0 +1,8 @@
+[cosmic-ray]
+module-path = "users" 
+timeout = 1.0 
+test-command = "python manage.py test users.tests" 
+excluded-modules = ["users.migrations", "users.urls","users.admin","users.apps","users.mutants"] 
+
+[cosmic-ray.distributor]
+name = "local" # Executa localmente
