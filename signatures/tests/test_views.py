@@ -66,10 +66,11 @@ class SignatureListViewSetTest(APITestCase):
         self.assertEqual(response.status_code, 200)
 
 
-    def test_combine_assinaturas_lista_vasia(self):
+    def test_combine_assinaturas_lista_vazia(self):
         url = reverse('signaturelist-combine-signatures', args=[self.signature_list.id])
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 500)  # Assume que o endpoint retorna 500 se não houver imagens
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data, {"error": "Você precisa ter ao menos uma assinatura."})
 
     def test_combine_assinaturas_lista_com_assinaturas(self):
 
@@ -112,3 +113,5 @@ class SignatureViewSetTest(APITestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
+
+
