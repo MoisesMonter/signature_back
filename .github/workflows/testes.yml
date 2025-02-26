@@ -34,4 +34,4 @@ jobs:
       - name: Rodar os testes de mutação (que se encontra na feature/test_mutacao)
         # if: github.ref == 'refs/heads/feature/test_mutacao' || github.ref == 'main'
         run: |
-          python py_mutants.py
+          python py_mutants.py .
