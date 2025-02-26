@@ -1,0 +1,8 @@
+[cosmic-ray]
+module-path = "signatures"
+timeout = 1.0
+test-command = "python manage.py test signatures.tests"
+excluded-modules = ["signatures.migrations", "signatures.urls", "signatures.admin", "signatures.apps", "signatures.mutants"]
+
+[cosmic-ray.distributor]
+name = "local" # Executa localmente
