@@ -15,7 +15,7 @@ class Mutacao:
 
     '''listen'''
     def listen(self):
-        arquivos = os.listdir(self.router+".")  # Lista arquivos e pastas no diretório atual
+        arquivos = os.listdir(".")  # Lista arquivos e pastas no diretório atual
         print("Arquivos e pastas no diretório atual:")
         for arquivo in arquivos:
             if '.tom' in arquivo:
@@ -68,22 +68,19 @@ class Mutacao:
                     ultima_ocorrencia = match[-1].start() 
                     self.__data[i] = self.__data[i][ultima_ocorrencia:]
                     
-            print('Mutacao: ',str(self.__toml[i])[:-5],self.__data[i],self.end_process_icon(self.__data[i]),"\n--------------------\n")
+            print('Mutacao: ',str(self.__toml[i])[:-5],'\n'+self.__data[i],self.end_process_icon(self.__data[i]),"\n--------------------\n")
 
 
 
 
 if __name__ == "__main__":
-    # if len(sys.argv) < 2:
-    #     print("Uso: python mutants.py <texto> necessita da rota exemplo ('signatures/mutants/') ou ('.' para indicar local)")
-    #     sys.exit(1)  # Sai do programa com código de erro
-    router = ''
-    try:
-        router = sys.argv[1]
-    except:
-        pass
+    if len(sys.argv) < 2:
+        print("Uso: python mutants.py <texto> necessita da rota exemplo ('signatures/mutants/'), ou ('.') para vasculhar na raiz local")
+        sys.exit(1)  # Sai do programa com código de erro
+
+    router = sys.argv[1]
     if router == '.':
-        router = ''
+        router =''
     start_time = time.time()
     Mutacao(filter,router).run()
     end_time = time.time()
